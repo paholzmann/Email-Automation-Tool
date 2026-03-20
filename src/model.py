@@ -23,13 +23,10 @@ class Model:
     def baseline_model_evaluation(self, y_test, y_pred):
         return {
             "accuracy": accuracy_score(y_test, y_pred),
-            "classification_report": classification_report(y_test, y_pred),
+            "classification_report": classification_report(y_test, y_pred, output_dict=True),
             "confusion_matrix": confusion_matrix(y_test, y_pred)
         }
 
     def save_baseline_model(self, pipeline, model_path="models/baseline_model.pkl"):
         joblib.dump(pipeline, model_path)
 
-    def make_baseline_model_prediction(self, model, text):
-        prediction = model.predict([text])[0]
-        return  {"prediction": prediction}

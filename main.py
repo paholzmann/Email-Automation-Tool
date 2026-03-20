@@ -22,4 +22,5 @@ if __name__ == "__main__":
     print(f"Classification report: \n {baseline_evaluation['classification_report']}")
     print(f"Confusion matrix: \n {baseline_evaluation['confusion_matrix']}")
     report.visualize_confusion_matrix(model_name="baseline_model", confusion_matrix=baseline_evaluation["confusion_matrix"])
+    report.visualize_classification_report(model_name="baseline_model", classification_report=baseline_evaluation["classification_report"])
     model.save_baseline_model(pipeline=pipeline)
