@@ -11,7 +11,7 @@ class Report:
     def __init__(self):
         self.logger = Logger(name="Report", level=logging.DEBUG).logger
 
-    def visualize_confusion_matrix(self, confusion_matrix):
+    def visualize_confusion_matrix(self, model_name, confusion_matrix):
         plt.figure()
         sns.heatmap(confusion_matrix, annot=True, cmap="Blues")
-        plt.show()
+        plt.savefig(f"reports/confusion_matrix_{model_name}")
