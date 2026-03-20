@@ -1,8 +1,8 @@
-# Project Definition: Support Triage Assistant
+# Project Definition: Email-Automation-Tool
 
 ## 1. Overview
 
-The Support Triage Assistant is a lightweight AI-powered system designed to automate the initial processing of customer support messages.
+This Email-Automation-Tool is a lightweight AI-powered system designed to automate the initial processing of customer support messages.
 
 It classifies incoming text into predefined categories, assigns a priority level, and suggests the next action. The goal is to reduce manual triage effort and improve response efficiency for small teams.
 
