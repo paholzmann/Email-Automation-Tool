@@ -1,5 +1,6 @@
 from sklearn.linear_model import LogisticRegression
 import joblib
+import os
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
@@ -26,7 +27,12 @@ class Model:
             "classification_report": classification_report(y_test, y_pred, output_dict=True),
             "confusion_matrix": confusion_matrix(y_test, y_pred)
         }
-
-    def save_baseline_model(self, pipeline, model_path="models/baseline_model.pkl"):
+    
+    def check_if_model_exists(self, model_path: str) -> bool:
+        return os.path.exists(path=model_path)
+    
+    def save_model(self, pipeline, model_path: str) -> None:
         joblib.dump(pipeline, model_path)
 
+    def load_model(self, model_path: str):
+        return joblib.load(model_path)
